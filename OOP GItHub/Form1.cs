@@ -14,6 +14,7 @@ namespace OOP_GItHub
     {
         public Form1()
         {
+            MessageBox.Show("Нічого не працює");
             InitializeComponent();
         }
     }
