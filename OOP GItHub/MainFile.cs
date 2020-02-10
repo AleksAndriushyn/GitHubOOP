@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace OOP_GItHub
 {
-    static class Program
+    static class MainFile
     {
         /// <summary>
         /// Главная точка входа для приложения.
@@ -16,7 +16,7 @@ namespace OOP_GItHub
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Shops());
         }
     }
 }
