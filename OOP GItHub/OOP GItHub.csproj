@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Shop.cs" />
     <Compile Include="Shops.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,9 +57,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Good.cs" />
     <Compile Include="FileDownloader.cs" />
-    <Compile Include="Network.cs" />
     <Compile Include="Booking.cs" />
-    <Compile Include="Shop.cs" />
     <EmbeddedResource Include="Shops.resx">
       <DependentUpon>Shops.cs</DependentUpon>
     </EmbeddedResource>

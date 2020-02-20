@@ -53,7 +53,7 @@
             // 
             // Goods_List
             // 
-            this.Goods_List.BackColor = System.Drawing.Color.Green;
+            this.Goods_List.BackColor = System.Drawing.Color.GreenYellow;
             this.Goods_List.FormattingEnabled = true;
             this.Goods_List.ItemHeight = 16;
             this.Goods_List.Location = new System.Drawing.Point(359, 82);
@@ -64,17 +64,18 @@
             // 
             // Booked_Goods
             // 
-            this.Booked_Goods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.Booked_Goods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.Booked_Goods.FormattingEnabled = true;
             this.Booked_Goods.ItemHeight = 16;
             this.Booked_Goods.Location = new System.Drawing.Point(37, 229);
             this.Booked_Goods.Name = "Booked_Goods";
             this.Booked_Goods.Size = new System.Drawing.Size(258, 116);
             this.Booked_Goods.TabIndex = 12;
+            this.Booked_Goods.SelectedIndexChanged += new System.EventHandler(this.Booked_Goods_SelectedIndexChanged);
             // 
             // Delete_button
             // 
-            this.Delete_button.BackColor = System.Drawing.Color.Red;
+            this.Delete_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.Delete_button.Location = new System.Drawing.Point(220, 363);
             this.Delete_button.Name = "Delete_button";
             this.Delete_button.Size = new System.Drawing.Size(75, 36);
@@ -85,7 +86,7 @@
             // 
             // Buy
             // 
-            this.Buy.BackColor = System.Drawing.Color.Red;
+            this.Buy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.Buy.Location = new System.Drawing.Point(37, 363);
             this.Buy.Name = "Buy";
             this.Buy.Size = new System.Drawing.Size(78, 36);
@@ -96,7 +97,7 @@
             // 
             // Buy_button
             // 
-            this.Buy_button.BackColor = System.Drawing.Color.Red;
+            this.Buy_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.Buy_button.Location = new System.Drawing.Point(359, 229);
             this.Buy_button.Name = "Buy_button";
             this.Buy_button.Size = new System.Drawing.Size(75, 36);
@@ -107,7 +108,7 @@
             // 
             // Book_button
             // 
-            this.Book_button.BackColor = System.Drawing.Color.Red;
+            this.Book_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.Book_button.Location = new System.Drawing.Point(543, 229);
             this.Book_button.Name = "Book_button";
             this.Book_button.Size = new System.Drawing.Size(75, 36);
@@ -118,15 +119,16 @@
             // 
             // txtPath
             // 
-            this.txtPath.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.txtPath.BackColor = System.Drawing.Color.White;
             this.txtPath.Location = new System.Drawing.Point(37, 82);
             this.txtPath.Name = "txtPath";
             this.txtPath.Size = new System.Drawing.Size(258, 22);
             this.txtPath.TabIndex = 18;
+            this.txtPath.TextChanged += new System.EventHandler(this.txtPath_TextChanged);
             // 
             // Load_button
             // 
-            this.Load_button.BackColor = System.Drawing.Color.Red;
+            this.Load_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.Load_button.Location = new System.Drawing.Point(37, 110);
             this.Load_button.Name = "Load_button";
             this.Load_button.Size = new System.Drawing.Size(75, 36);
@@ -137,7 +139,7 @@
             // 
             // Browse_button
             // 
-            this.Browse_button.BackColor = System.Drawing.Color.Red;
+            this.Browse_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.Browse_button.Location = new System.Drawing.Point(220, 110);
             this.Browse_button.Name = "Browse_button";
             this.Browse_button.Size = new System.Drawing.Size(75, 36);
@@ -154,6 +156,7 @@
             this.Shops1.Size = new System.Drawing.Size(115, 17);
             this.Shops1.TabIndex = 21;
             this.Shops1.Text = "Choose the shop";
+            this.Shops1.Click += new System.EventHandler(this.Shops1_Click);
             // 
             // Shops
             // 

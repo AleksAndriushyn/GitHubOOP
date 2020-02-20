@@ -3,57 +3,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Windows.Forms;
 using System.IO;
 
 namespace OOP_GItHub
 {
     class FileDownloader
     {
-        public Good AddElectronics(List<Good> someList)
+        static public void LoadFile(TextBox textBox, ListBox listBox)
         {
-            string filePath = @"d:\\Мои документы\Документы\ООП\Лаба 3\goodsElectronics.txt";
-            List<string> lines = File.ReadAllLines(filePath).ToList();
-            foreach (var line in lines)
+            try
             {
-                string[] entries = line.Split(',');
-                someList.Add(new Good(Int32.Parse(entries[0]), entries[1], Int32.Parse(entries[2]), Boolean.Parse(entries[3])));
+                string[] lines = File.ReadAllLines(textBox.Text.Trim());
+
+                foreach (string line in lines)
+                    listBox.Items.Add(line);
             }
-            return someList[0];
+
+            catch { }
         }
 
-        public Good AddApteka(List<Good> someList)
+        static public void BrowseFile(TextBox textBox)
         {
-            string filePath = @"d:\\Мои документы\Документы\ООП\Лаба 3\goodsApteka.txt";
-            List<string> lines = File.ReadAllLines(filePath).ToList();
-            foreach (var line in lines)
+            try
             {
-                string[] entries = line.Split(',');
-                someList.Add(new Good(Int32.Parse(entries[0]), entries[1], Int32.Parse(entries[2]), Boolean.Parse(entries[3])));
+                OpenFileDialog op = new OpenFileDialog();
+                op.ShowDialog();
+                if (op.ShowDialog() == DialogResult.OK)
+                    textBox.Text = op.FileName;
             }
-            return someList[1];
-        }
 
-        public Good AddStore(List<Good> someList)
-        {
-            string filePath = @"d:\\Мои документы\Документы\ООП\Лаба 3\goodsStore.txt";
-            List<string> lines = File.ReadAllLines(filePath).ToList();
-            foreach (var line in lines)
-            {
-                string[] entries = line.Split(',');
-                someList.Add(new Good(Int32.Parse(entries[0]), entries[1], Int32.Parse(entries[2]), Boolean.Parse(entries[3])));
-            }
-            return someList[0];
-        }
-
-        public void AddShops(List<Shop> someList)
-        {
-            string filePath = @"d:\\Мои документы\Документы\ООП\Лаба 3\Network.txt";
-            List<string> lines = File.ReadAllLines(filePath).ToList();
-            foreach (var line in lines)
-            {
-                string[] entries = line.Split(',');
-                someList.Add(new Shop(Int32.Parse(entries[0]), entries[1]));
-            }
+            catch { }
         }
     }
 }
