@@ -21,18 +21,10 @@ namespace OOP_GItHub
             this.date = date;
         }
 
-        static public void BookItem(ListBox listBox, ListBox listBox1)
+        public string BookItem(ListBox listBox, ListBox listBox1)
         {
-            Booking booking = new Booking(DateTime.Now.AddDays(7), DateTime.Now);
-
             string[] text = listBox.SelectedItem.ToString().Split(',');
-
-            MessageBox.Show($"You've booked the {text[1]} {booking.date}.\n" +
-                            $"Your booking will expire {booking.validity}.");
-
-            listBox1.Items.Add(listBox.SelectedItem.ToString());
-
-            listBox.Items.Remove(listBox.SelectedItem.ToString());
+            return text[1];
         }
     }
 }

@@ -13,7 +13,7 @@ namespace OOP_GItHub
 {
     class FileDownloader
     {
-        static public void LoadFile(TextBox textBox, ListBox listBox)
+        public void LoadFile(TextBox textBox, ListBox listBox)
         {
             try
             {
@@ -26,7 +26,7 @@ namespace OOP_GItHub
             catch { }
         }
 
-        static public void BrowseFile(TextBox textBox)
+        public void BrowseFile(TextBox textBox)
         {
             try
             {
