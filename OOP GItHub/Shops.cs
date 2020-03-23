@@ -6,12 +6,17 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace OOP_GItHub
 {
     public partial class Shops : Form
     {
+        BusinessLayer.LoadGoods bl = new BusinessLayer.LoadGoods();
+        BusinessLayer.BuyItem buy = new BusinessLayer.BuyItem();
+        BusinessLayer.Network network = new BusinessLayer.Network();
+
         public Shops()
         {
             InitializeComponent();
@@ -29,11 +34,7 @@ namespace OOP_GItHub
 
         private void Buy_Click(object sender, EventArgs e)
         {
-            Shop buy = new Shop();
-            
-            MessageBox.Show($"You've bought the {buy.BuyItem(Booked_Goods)}.\n" +
-                    $"\nCome to the store from Monday-Friday from 9:00 to 21:00.");
-
+            MessageBox.Show($"{buy.Buy_Good(Booked_Goods.SelectedItem.ToString())}");
             Booked_Goods.Items.Remove(Booked_Goods.SelectedItem.ToString());
         }
 
@@ -45,32 +46,25 @@ namespace OOP_GItHub
 
         private void Buy_button_Click(object sender, EventArgs e)
         {
-            Shop buy = new Shop();
-
-            MessageBox.Show($"You've bought the {buy.BuyItem(Goods_List)}.\n" +
-                    $"\nCome to the store from Monday-Friday from 9:00 to 21:00.");
-
+            MessageBox.Show($"{buy.Buy_Good(Shop_List.SelectedItem.ToString())}");
             Goods_List.Items.Remove(Goods_List.SelectedItem.ToString());
         }
 
         private void Load_button_Click(object sender, EventArgs e)
         {
-            FileDownloader load = new FileDownloader();
-            load.LoadFile(txtPath, Goods_List);
+            Goods_List.Items.Add(bl.GetGoods_List(Shop_List.SelectedItem.ToString()));
         }
 
         private void Browse_button_Click(object sender, EventArgs e)
         {
-            FileDownloader browse = new FileDownloader();
-            browse.BrowseFile(txtPath);
+            Shop_List.Items.Add(network.AddShops(txtPath.Text.Trim().ToString()));
         }
 
         private void Book_button_Click(object sender, EventArgs e)
         {
-            Booking booking = new Booking(DateTime.Now.AddDays(7), DateTime.Now);
+            BusinessLayer.Booking booking = new BusinessLayer.Booking();
 
-            MessageBox.Show($"You've booked the {booking.BookItem(Goods_List, Booked_Goods)} {booking.date}.\n" +
-                            $"Your booking will expire {booking.validity}.");
+            MessageBox.Show(booking.BookItem(Goods_List.SelectedItem.ToString()));
 
             Booked_Goods.Items.Add(Goods_List.SelectedItem.ToString());
             Goods_List.Items.Remove(Goods_List.SelectedItem.ToString());
@@ -83,12 +77,17 @@ namespace OOP_GItHub
 
         private void txtPath_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void Shops1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

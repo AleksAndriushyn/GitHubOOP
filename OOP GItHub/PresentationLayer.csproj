@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,7 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Shop.cs" />
     <Compile Include="Shops.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,9 +55,6 @@
     </Compile>
     <Compile Include="MainFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Good.cs" />
-    <Compile Include="FileDownloader.cs" />
-    <Compile Include="Booking.cs" />
     <EmbeddedResource Include="Shops.resx">
       <DependentUpon>Shops.cs</DependentUpon>
     </EmbeddedResource>
@@ -81,7 +78,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
+      <Project>{940a7605-366e-4c66-ac38-41eb3ad62b17}</Project>
+      <Name>BusinessLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

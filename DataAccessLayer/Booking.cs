@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Windows.Forms;
 
-namespace OOP_GItHub
+namespace DataAccessLayer
 {
     public class Booking
     {
@@ -19,12 +18,6 @@ namespace OOP_GItHub
         {
             this.validity = validity;
             this.date = date;
-        }
-
-        public string BookItem(ListBox listBox, ListBox listBox1)
-        {
-            string[] text = listBox.SelectedItem.ToString().Split(',');
-            return text[1];
         }
     }
 }

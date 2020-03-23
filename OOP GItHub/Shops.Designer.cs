@@ -39,6 +39,7 @@
             this.Load_button = new System.Windows.Forms.Button();
             this.Browse_button = new System.Windows.Forms.Button();
             this.Shops1 = new System.Windows.Forms.Label();
+            this.Shop_List = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // Recipe
@@ -129,7 +130,7 @@
             // Load_button
             // 
             this.Load_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Load_button.Location = new System.Drawing.Point(37, 110);
+            this.Load_button.Location = new System.Drawing.Point(235, 169);
             this.Load_button.Name = "Load_button";
             this.Load_button.Size = new System.Drawing.Size(75, 36);
             this.Load_button.TabIndex = 19;
@@ -140,23 +141,34 @@
             // Browse_button
             // 
             this.Browse_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Browse_button.Location = new System.Drawing.Point(220, 110);
+            this.Browse_button.Location = new System.Drawing.Point(133, 110);
             this.Browse_button.Name = "Browse_button";
             this.Browse_button.Size = new System.Drawing.Size(75, 36);
             this.Browse_button.TabIndex = 20;
-            this.Browse_button.Text = "Browse";
+            this.Browse_button.Text = "Add";
             this.Browse_button.UseVisualStyleBackColor = false;
             this.Browse_button.Click += new System.EventHandler(this.Browse_button_Click);
             // 
             // Shops1
             // 
             this.Shops1.AutoSize = true;
-            this.Shops1.Location = new System.Drawing.Point(106, 62);
+            this.Shops1.Location = new System.Drawing.Point(116, 62);
             this.Shops1.Name = "Shops1";
-            this.Shops1.Size = new System.Drawing.Size(115, 17);
+            this.Shops1.Size = new System.Drawing.Size(101, 17);
             this.Shops1.TabIndex = 21;
-            this.Shops1.Text = "Choose the shop";
+            this.Shops1.Text = "Enter the shop";
             this.Shops1.Click += new System.EventHandler(this.Shops1_Click);
+            // 
+            // Shop_List
+            // 
+            this.Shop_List.BackColor = System.Drawing.Color.Red;
+            this.Shop_List.FormattingEnabled = true;
+            this.Shop_List.ItemHeight = 16;
+            this.Shop_List.Location = new System.Drawing.Point(109, 152);
+            this.Shop_List.Name = "Shop_List";
+            this.Shop_List.Size = new System.Drawing.Size(120, 68);
+            this.Shop_List.TabIndex = 22;
+            this.Shop_List.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // Shops
             // 
@@ -164,6 +176,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Yellow;
             this.ClientSize = new System.Drawing.Size(648, 421);
+            this.Controls.Add(this.Shop_List);
             this.Controls.Add(this.Shops1);
             this.Controls.Add(this.Browse_button);
             this.Controls.Add(this.Load_button);
@@ -195,6 +208,7 @@
         private System.Windows.Forms.Button Load_button;
         private System.Windows.Forms.Button Browse_button;
         private System.Windows.Forms.Label Shops1;
+        private System.Windows.Forms.ListBox Shop_List;
     }
 }
 

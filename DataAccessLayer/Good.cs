@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OOP_GItHub
+namespace DataAccessLayer
 {
     public class Good
     {
@@ -9,7 +9,10 @@ namespace OOP_GItHub
         public int price;
         public bool availbl;
 
-        public Good() { }
+        public Good()
+        {
+
+        }
 
         public Good(int id, string name, int price, bool availbl)
         {
