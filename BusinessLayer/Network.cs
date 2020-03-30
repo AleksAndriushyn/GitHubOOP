@@ -8,10 +8,10 @@ namespace BusinessLayer
 {
     public class Network
     {
+        List<DataAccessLayer.Shop> shops = new List<DataAccessLayer.Shop>();
+
         public string AddShops(string name)
         {
-            List<DataAccessLayer.Shop> shops = new List<DataAccessLayer.Shop>();
-
             foreach (var x in shops)
             {
                 if (name == x.name)
@@ -20,6 +20,28 @@ namespace BusinessLayer
                 }
             }
             return name;
+        }
+
+        public string GetShopByName(string StoreName)
+        {
+            DataAccessLayer.Shop shop = new DataAccessLayer.Shop();
+
+            if (StoreName == "Electronics")
+            {
+                shop.AddGood(StoreName);
+                return shop.GetGoods(StoreName);
+            }
+            else if (StoreName == "Apteka")
+            {
+                shop.AddGood(StoreName);
+                return shop.GetGoods(StoreName);
+            }
+            else if (StoreName == "Store")
+            {
+                shop.AddGood(StoreName);
+                return shop.GetGoods(StoreName);
+            }
+            else throw new Exception();
         }
     }
 }

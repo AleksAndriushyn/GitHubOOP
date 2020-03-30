@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 using System.IO;
 
 namespace DataAccessLayer
@@ -11,7 +12,7 @@ namespace DataAccessLayer
     {
         public Good AddElectronics(List<Good> someList)
         {
-            string filePath = @"d:\\Мои документы\Документы\ООП\Лаба 3\goodsElectronics.txt";
+            string filePath = ConfigurationManager.ConnectionStrings["ElectronicsGoods"].ConnectionString;
             List<string> lines = File.ReadAllLines(filePath).ToList();
             foreach (var line in lines)
             {
@@ -23,7 +24,7 @@ namespace DataAccessLayer
 
         public Good AddApteka(List<Good> someList)
         {
-            string filePath = @"d:\\Мои документы\Документы\ООП\Лаба 3\goodsApteka.txt";
+            string filePath = ConfigurationManager.ConnectionStrings["AptekaGoods"].ConnectionString;
             List<string> lines = File.ReadAllLines(filePath).ToList();
             foreach (var line in lines)
             {
@@ -35,7 +36,7 @@ namespace DataAccessLayer
 
         public Good AddStore(List<Good> someList)
         {
-            string filePath = @"d:\\Мои документы\Документы\ООП\Лаба 3\goodsStore.txt";
+            string filePath = ConfigurationManager.ConnectionStrings["StoreGoods"].ConnectionString;
             List<string> lines = File.ReadAllLines(filePath).ToList();
             foreach (var line in lines)
             {

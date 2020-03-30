@@ -45,7 +45,6 @@
   <ItemGroup>
     <Compile Include="Booking.cs" />
     <Compile Include="BuyItem.cs" />
-    <Compile Include="LoadGoods.cs" />
     <Compile Include="MainBusiness.cs" />
     <Compile Include="Network.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
